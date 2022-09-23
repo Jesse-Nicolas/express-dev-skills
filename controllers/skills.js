@@ -15,6 +15,7 @@ function index(req, res)  {
 }
 
 function newSkill(req, res)  {
+  console.log('your hitting the router!')
   res.render('skills/new')
 }
 
