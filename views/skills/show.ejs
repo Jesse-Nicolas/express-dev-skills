@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Skill: <%= skill.skill %></h1>
+  <h3>Mastered: <%= skill.mastered ? 'yes' : 'no' %></h3>
+  <p>unique ID number: <%= skill.id %></p>
+  <a href="/skills">Go back</a>
+  <a href="/skills/<%= skill.id %>/edit">edit</a>
+  <form action="/skills/<%= skill._id %>?_method=DELETE" class="delete-form" method="POST">
+    <button type="submit">delete</button>
+  </form>
+</body>
+</html>
