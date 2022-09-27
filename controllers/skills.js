@@ -65,9 +65,11 @@ function edit(req, res) {
 }
 
 function update(req, res) {
+  console.log('COMING FROM UPDATE CONTROLLER FUNCTION', req.body)
   req.body.mastered = !!req.body.mastered
   Skill.findByIdAndUpdate(req.params.id, req.body, {new: true})
   .then(skill =>  {
+    console.log('UPDATED SKILL', skill)
     res.redirect(`/skills/show`)
   })
   .catch(error => {
